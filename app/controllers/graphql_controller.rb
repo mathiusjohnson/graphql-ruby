@@ -22,8 +22,6 @@ class GraphqlController < ApplicationController
     params[:operationName]
   end
 
-
-
   def current_user
     print 'before token'
     # if we want to change the sign-in strategy, this is the place to do it
