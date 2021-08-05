@@ -1,0 +1,78 @@
+# {
+  #   allLinks {
+  #     id
+  #     url
+  #     description
+  #   }
+  # }
+  
+  # mutation {
+  #   createLink(
+  #     url: "https://www.link.ca",
+  #     description: "Best tools!",
+  #   ) {
+  #     id
+  #     url
+  #     description
+  #     postedBy {
+  #       id
+  #       name
+  #     }
+  #   }
+  # }
+  
+  # mutation {
+  #   createUser(
+  #     name:"Mathius", 
+  #     authProvider: {
+  #       credentials: {
+  #         email:"m@j.com", 
+  #         password: "123456"
+  #       }
+  #     }
+  #   ) {
+  #     email
+      
+  #   }
+  # }
+  
+  
+  # mutation {
+  #   signinUser(
+  #       credentials: {
+  #         email:"m@j.com", 
+  #         password: "123456"
+  #       }
+  #     ) {
+  # 			token
+  #     user {
+  #       id
+  #     }
+  #   }
+  # }
+  
+  
+  # mutation {
+  #   createVote(linkId:"4") {
+  #     link {
+  #       description
+  #     }
+  #     user {
+  #       name
+  #     }
+  #   }
+  # }
+  
+  query {
+    allLinks {
+      id
+      postedBy {
+        name
+        votes {
+          link {
+            description
+          }
+        }
+      }
+    }
+  }
