@@ -9,13 +9,12 @@
   # mutation {
   #   createLink(
   #     url: "https://www.link.ca",
-  #     description: "Best tools!",
+  #     description: "link five",
   #   ) {
   #     id
   #     url
   #     description
   #     postedBy {
-  #       id
   #       name
   #     }
   #   }
@@ -26,7 +25,7 @@
   #     name:"Mathius", 
   #     authProvider: {
   #       credentials: {
-  #         email:"m@j.com", 
+  #         email:"c@j.com", 
   #         password: "123456"
   #       }
   #     }
@@ -40,20 +39,20 @@
   # mutation {
   #   signinUser(
   #       credentials: {
-  #         email:"m@j.com", 
+  #         email:"c@j.com", 
   #         password: "123456"
   #       }
   #     ) {
   # 			token
   #     user {
-  #       id
+  #       name
   #     }
   #   }
   # }
   
   
   # mutation {
-  #   createVote(linkId:"4") {
+  #   createVote(linkId: "TGluay02") {
   #     link {
   #       description
   #     }
@@ -63,15 +62,27 @@
   #   }
   # }
   
+  # query {
+  #   allLinks {
+  #     id
+  #     postedBy {
+  #       name
+  #       votes {
+  #         link {
+  #           description
+  #         }
+  #       }
+  #     }
+  #   }
+  # }
+  
   query {
     allLinks {
       id
-      postedBy {
-        name
-        votes {
-          link {
-            description
-          }
+      description
+      votes {
+        user {
+          email
         }
       }
     }
