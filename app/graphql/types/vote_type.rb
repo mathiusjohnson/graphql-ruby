@@ -1,7 +1,7 @@
 module Types
-  class VoteType < BaseObject
-    field :created_at, [Types::DateTimeType], null: false
-    field :user, [Types::UserType], null: false
-    field :link, [Types::LinkType], null: false
+  class VoteType < BaseNode
+    field :created_at, DateTimeType, null: false
+    field :user, UserType, null: false
+    field :link, LinkType, null: false
   end
 end
