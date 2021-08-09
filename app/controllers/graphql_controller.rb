@@ -1,6 +1,11 @@
 class GraphqlController < ApplicationController
   def execute
-    result = GraphqlTutorialSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
+    result = GraphqlTutorialSchema.execute(
+      query, 
+      variables: variables, 
+      context: context, 
+      operation_name: operation_name
+    )
     render json: result
   rescue StandardError => e
     raise e unless Rails.env.development?
