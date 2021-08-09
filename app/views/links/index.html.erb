@@ -1,0 +1,15 @@
+<h1>User Links</h1>
+<div class="">
+  <div class="ui relaxed divided list">
+    <% for link in @data do %>
+      <div class="item">
+        <div class="content">
+          <a class="header">
+            <%= link.description %>
+          </a>
+          <p class="description text-2xl">- posted by: <%= link.posted_by.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
