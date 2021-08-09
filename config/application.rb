@@ -14,10 +14,14 @@ require "action_view/railtie"
 # require "action_cable/engine"
 require "sprockets/railtie"
 require "rails/test_unit/railtie"
-
+require "graphlient"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+
+require 'graphlient'
+require "graphql/client"
+require "graphql/client/http"
 
 module GraphqlTutorial
   class Application < Rails::Application
@@ -35,4 +39,5 @@ module GraphqlTutorial
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
+
 end
